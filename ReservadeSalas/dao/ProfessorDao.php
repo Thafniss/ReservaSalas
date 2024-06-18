@@ -1,7 +1,6 @@
 <?php 
-include_once 'dao/ConnectionFactory.php';
-include_once 'View/Professor.php';
-include_once 'dao/ProfessorDao.php';
+include_once 'ConnectionFactory.php';
+include_once 'ProfessorDao.php';
 
 class ProfessorDao{
 
