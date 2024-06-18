@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Reserva de Salas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reserva de Salas</h1>
+        <form action="ReservaForm.php" method="post">
+            <div class="form-group">
+                <label for="sala">Sala:</label>
+                <select class="form-control" id="sala" name="sala_id">
+                    <option value="1">Sala 101</option>
+                    <option value="2">Sala 102</option>
+                    <option value="3">Sala 103</option>
+                    <option value="4">Sala 104</option>
+                    <option value="5">Sala 105</option>
+                    <option value="6">Sala 106</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="usuario">Usuário:</label>
+                <select class="form-control" id="usuario" name="usuario_id">
+                    <option value="1">João Silva</option>
+                    <option value="2">Maria Santos</option>
+                    <option value="3">José Marques</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inicio">Data/Hora de Início:</label>
+                <input type="datetime-local" class="form-control" id="inicio" name="data_hora_inicio" required>
+            </div>
+            <div class="form-group">
+                <label for="fim">Data/Hora de Fim:</label>
+                <input type="datetime-local" class="form-control" id="fim" name="data_hora_fim" required>
+            </div>
+            <button type="submit" class="btn btn-success">Confirmar Reserva</button>
+        </form>
+    </div>
+ <!-- <form action="Reservar.php" method="post"> 
+             Campos para reserva 
+           
+            <button type="submit" class="btn btn-primary">Reservar</button>
+        </form>
+        Lista de reservas -->
+       
+    </div>
+</body>
+</html>
