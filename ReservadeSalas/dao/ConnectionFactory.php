@@ -4,14 +4,13 @@ class ConnectionFactory{
 
     public static function getConnection(){
         if(!isset($conn)){
-            $database = "reservasalas"; // Coloque o nome do seu bd
+            $database = "reservasalas"; 
             $user = "root";
             $pass = "";
             $host = "localhost";
-            $port = "3306"; // Na faculdade MySQL do XAMPP é 3307
+            $port = "3306"; 
             try{
                 $conn = new PDO("mysql:host=$host;port=$port;dbname=$database", $user, $pass);
-                echo "conectado";
                 return $conn;
             }catch(PDOException $ex){
                 echo "Erro! ". $ex->getMessage();
