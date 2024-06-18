@@ -12,15 +12,15 @@ $d = filter_input_array(INPUT_POST);
 
 //se a operação for gravar entra nessa condição
 if(isset($_POST['cadastrar'])){
-    $professor->setUsuario($d['usuario']);
+    $Professor->setUsuario($d['usuario']);
     $Professor->setSenha($d['Senha']);
 
-    $ProfessorDao->inserir($professor);
-    header("Location: ../ProfessorForm.php");
+    $ProfessorDao->inserir($Professor);
+    header("Location: View/ProfessorForm.php");
 }// se a requisição for deletar
 else if(isset($_GET['del'])){
-    $professor->setId($_GET['del']);
-    $ProfessorDao->delete($professor);
+    $Professor->setId($_GET['del']);
+    $ProfessorDao->delete($Professor);
     header("Location: ../ProfessorForm.php");
 }
 ?>
