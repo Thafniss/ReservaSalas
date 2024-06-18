@@ -1,7 +1,7 @@
 ?>
 
     <?php
-    // Função para validar as entradas do usuário
+    //  validar as entradas do usuário
     function validarEntrada($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -9,14 +9,14 @@
         return $data;
     }
     
-    // Variáveis para conexão com o banco de dados
+    //  conexão com o banco de dados
     $servidor = "localhost";
-    $usuarioDB = "nome_usuario";
-    $senhaDB = "senha_usuario";
-    $nomeBanco = "nome_do_banco_de_dados";
+    $usuarioDB = "root";
+    $senhaDB = "";
+    $reservasalas= "reservasalas";
     
     // Criar conexão
-    $conn = new mysqli($servidor, $usuario, $senha, $nomeBanco);
+    $conn = new mysqli($servidor, $usuario, $senhaDB, $reservasalas);
     
     // Checar conexão
     if ($conn->connect_error) {
@@ -41,28 +41,23 @@
 
     }
     
-    class Usuario {
+    class Usuario{
         private $usuario_id;
         private $nome;
+        private $senha;
         // Métodos para manipular dados do usuário
-        public function __construct($usuario_id, $nome) {
+        public function __construct($usuario_id, $nome, $senha) {
             $this->usuario_id = $usuario_id;
             $this->nome = $nome;
+            $this->senha = $senha;
         
     }
 }
     
-    // Exemplo de uso da função validarEntrada
+  // função validarEntrada
     $nomeSala = validarEntrada($_POST['nome']);
     $capacidadeSala = validarEntrada($_POST['capacidade']);
     $Usuario = validarEntrada($_POST['Usuario']);
     
-    // Não se esqueça de validar e sanitizar todas as entradas que você receber do usuário antes de usá-las em seu banco de dados ou lógica de aplicação.
+   
     ?>
-    
-    
-    Neste código, eu adicionei a função validarEntrada e as variáveis de conexão com o banco de dados no início do script. As classes Sala, Reserva e Usuario permanecem inalteradas.
-     Você pode adicionar os métodos necessários dentro de cada classe conforme sua necessidade.
-      Lembre-se de substituir os valores das variáveis $servidor, $usuarioDB, $senhaDB e $nomeBanco com as informações reais do seu banco de dados.
-    
-    Espero que isso ajude! Se precisar de mais assistência, estou aqui para ajudar.
